@@ -120,6 +120,10 @@ public class Client extends AbstractAuditableWithUTCDateTimeCustom<Long> {
     @Column(name = "external_id", length = 100, unique = true)
     private ExternalId externalId;
 
+    @Column(name = "curp", length = 100, unique = true)
+    private ExternalId curp;
+
+
     @Column(name = "date_of_birth")
     private LocalDate dateOfBirth;
 
@@ -220,10 +224,10 @@ public class Client extends AbstractAuditableWithUTCDateTimeCustom<Long> {
             final LocalDate activationDate, final LocalDate officeJoiningDate, final ExternalId externalId, final String mobileNo,
             final String emailAddress, final Staff staff, final LocalDate submittedOnDate, final Long savingsProductId,
             final Long savingsAccountId, final LocalDate dateOfBirth, final CodeValue gender, final CodeValue clientType,
-            final CodeValue clientClassification, final Integer legalForm, final Boolean isStaff) {
+            final CodeValue clientClassification, final Integer legalForm, final Boolean isStaff, final ExternalId curp) {
         return new Client(currentUser, status, office, clientParentGroup, accountNo, firstname, middlename, lastname, fullname,
                 activationDate, officeJoiningDate, externalId, mobileNo, emailAddress, staff, submittedOnDate, savingsProductId,
-                savingsAccountId, dateOfBirth, gender, clientType, clientClassification, legalForm, isStaff);
+                savingsAccountId, dateOfBirth, gender, clientType, clientClassification, legalForm, isStaff, curp);
     }
 
     protected Client() {}
@@ -233,7 +237,7 @@ public class Client extends AbstractAuditableWithUTCDateTimeCustom<Long> {
             final LocalDate activationDate, final LocalDate officeJoiningDate, final ExternalId externalId, final String mobileNo,
             final String emailAddress, final Staff staff, final LocalDate submittedOnDate, final Long savingsProductId,
             final Long savingsAccountId, final LocalDate dateOfBirth, final CodeValue gender, final CodeValue clientType,
-            final CodeValue clientClassification, final Integer legalForm, final Boolean isStaff) {
+            final CodeValue clientClassification, final Integer legalForm, final Boolean isStaff, final ExternalId curp) {
 
         if (StringUtils.isBlank(accountNo)) {
             this.accountNumber = new RandomPasswordGenerator(19).generate();
@@ -247,6 +251,7 @@ public class Client extends AbstractAuditableWithUTCDateTimeCustom<Long> {
         this.status = status.getValue();
         this.office = office;
         this.externalId = externalId;
+        this.externalId = curp;
 
         if (StringUtils.isNotBlank(mobileNo)) {
             this.mobileNo = mobileNo.trim();

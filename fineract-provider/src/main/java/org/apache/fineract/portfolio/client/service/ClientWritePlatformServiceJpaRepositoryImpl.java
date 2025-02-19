@@ -283,10 +283,12 @@ public class ClientWritePlatformServiceJpaRepositoryImpl implements ClientWriteP
 
             final ExternalId externalId = externalIdFactory.createFromCommand(command, ClientApiConstants.externalIdParamName);
 
+            final ExternalId curp = externalIdFactory.createFromCommand(command, ClientApiConstants.curpParamName);
+
             final Client newClient = Client.instance(currentUser, status, clientOffice, clientParentGroup, accountNo, firstname, middlename,
                     lastname, fullname, activationDate, officeJoiningDate, externalId, mobileNo, emailAddress, staff, submittedOnDate,
                     savingsProductId, savingsAccountId, dataOfBirth, gender, clientType, clientClassification, legalForm.getValue(),
-                    isStaff);
+                    isStaff, curp);
 
             this.clientRepository.saveAndFlush(newClient);
             boolean rollbackTransaction = false;

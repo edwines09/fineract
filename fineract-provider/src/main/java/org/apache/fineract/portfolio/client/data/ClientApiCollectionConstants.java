@@ -30,11 +30,11 @@ public class ClientApiCollectionConstants extends ClientApiConstants {
             emailAddressParamName, firstnameParamName, middlenameParamName, lastnameParamName, fullnameParamName, officeIdParamName,
             activeParamName, activationDateParamName, staffIdParamName, submittedOnDateParamName, savingsProductIdParamName,
             dateOfBirthParamName, genderIdParamName, clientTypeIdParamName, clientClassificationIdParamName,
-            clientNonPersonDetailsParamName, displaynameParamName, legalFormIdParamName, datatables, isStaffParamName));
+            clientNonPersonDetailsParamName, displaynameParamName, legalFormIdParamName, datatables, isStaffParamName, curpParamName));
 
     protected static final Set<String> CLIENT_NON_PERSON_CREATE_REQUEST_DATA_PARAMETERS = new HashSet<>(
             Arrays.asList(familyMembers, address, localeParamName, dateFormatParamName, incorpNumberParamName, remarksParamName,
-                    incorpValidityTillParamName, constitutionIdParamName, mainBusinessLineIdParamName, datatables));
+                    incorpValidityTillParamName, constitutionIdParamName, mainBusinessLineIdParamName, datatables, curpParamName));
 
     protected static final Set<String> CLIENT_UPDATE_REQUEST_DATA_PARAMETERS = new HashSet<>(Arrays.asList(localeParamName,
             dateFormatParamName, accountNoParamName, externalIdParamName, mobileNoParamName, emailAddressParamName, firstnameParamName,
@@ -42,11 +42,11 @@ public class ClientApiCollectionConstants extends ClientApiConstants {
 
             lastnameParamName, fullnameParamName, activeParamName, activationDateParamName, staffIdParamName, savingsProductIdParamName,
             dateOfBirthParamName, genderIdParamName, clientTypeIdParamName, clientClassificationIdParamName, submittedOnDateParamName,
-            clientNonPersonDetailsParamName, displaynameParamName, legalFormIdParamName, isStaffParamName));
+            clientNonPersonDetailsParamName, displaynameParamName, legalFormIdParamName, isStaffParamName, curpParamName));
 
     protected static final Set<String> CLIENT_NON_PERSON_UPDATE_REQUEST_DATA_PARAMETERS = new HashSet<>(
             Arrays.asList(localeParamName, dateFormatParamName, incorpNumberParamName, remarksParamName, incorpValidityTillParamName,
-                    constitutionIdParamName, mainBusinessLineIdParamName));
+                    constitutionIdParamName, mainBusinessLineIdParamName, curpParamName));
 
     /**
      * These parameters will match the class level parameters of {@link ClientData}. Where possible, we try to get

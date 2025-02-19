@@ -79,6 +79,7 @@ public class ClientApiConstants {
     public static final String groupIdParamName = "groupId";
     public static final String accountNoParamName = "accountNo";
     public static final String externalIdParamName = "externalId";
+    public static final String curpParamName = "curp";
     public static final String mobileNoParamName = "mobileNo";
     public static final String emailAddressParamName = "emailAddress";
     public static final String firstnameParamName = "firstname";

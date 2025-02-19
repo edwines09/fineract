@@ -160,6 +160,12 @@ public final class ClientDataValidator {
                     .notExceedingLengthOf(100);
         }
 
+        if (this.fromApiJsonHelper.parameterExists(ClientApiConstants.curpParamName, element)) {
+            final String curp = this.fromApiJsonHelper.extractStringNamed(ClientApiConstants.curpParamName, element);
+            baseDataValidator.reset().parameter(ClientApiConstants.curpParamName).value(curp).ignoreIfNull()
+                    .notExceedingLengthOf(100);
+        }
+
         if (this.fromApiJsonHelper.parameterExists(ClientApiConstants.mobileNoParamName, element)) {
             final String mobileNo = this.fromApiJsonHelper.extractStringNamed(ClientApiConstants.mobileNoParamName, element);
             baseDataValidator.reset().parameter(ClientApiConstants.mobileNoParamName).value(mobileNo).ignoreIfNull()
@@ -435,6 +441,12 @@ public final class ClientDataValidator {
             atLeastOneParameterPassedForUpdate = true;
             final String externalId = this.fromApiJsonHelper.extractStringNamed(ClientApiConstants.externalIdParamName, element);
             baseDataValidator.reset().parameter(ClientApiConstants.externalIdParamName).value(externalId).notExceedingLengthOf(100);
+        }
+
+        if (this.fromApiJsonHelper.parameterExists(ClientApiConstants.curpParamName, element)) {
+            atLeastOneParameterPassedForUpdate = true;
+            final String curp = this.fromApiJsonHelper.extractStringNamed(ClientApiConstants.curpParamName, element);
+            baseDataValidator.reset().parameter(ClientApiConstants.curpParamName).value(curp).notExceedingLengthOf(100);
         }
 
         if (this.fromApiJsonHelper.parameterExists(ClientApiConstants.mobileNoParamName, element)) {
